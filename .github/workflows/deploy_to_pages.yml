@@ -21,10 +21,15 @@ jobs:
 
     # 実行するコマンド
     steps:
-      - name: build with asciidoctor
-        run: asciidoctor ./src/index.adoc -o ./public/index.html
 
-      # Pages にデプロイしてくれるリポジトリがあった
+      # Actions で asciidoctor を使えるようにしてくれる
+      - name: build with asciidoctor
+        id: documents
+        uses: Analog-ing/asciidoctor-action@master
+        with:
+          shellcommand: "asciidoctor ./src/index.adoc -o ./public/index.html"
+
+      # Pages にデプロイしてくれる
       - name: deploy to pages
         uses: peaceiris/actions-gh-pages@v3
         with:
