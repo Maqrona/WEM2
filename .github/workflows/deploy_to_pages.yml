@@ -22,6 +22,10 @@ jobs:
     # 実行するコマンド
     steps:
 
+      - name: test
+        run: |
+          ls -al
+
       # Actions で asciidoctor を使えるようにしてくれる
       - name: build with asciidoctor
 
