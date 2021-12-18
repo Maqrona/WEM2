@@ -25,7 +25,7 @@ jobs:
       # Actions で asciidoctor を使えるようにしてくれる
       - name: build with asciidoctor
         id: documents
-        uses: Analog-ing/asciidoctor-action@master
+        uses: Analog-inc/asciidoctor-action@master
         with:
           shellcommand: "asciidoctor ./src/index.adoc -o ./public/index.html"
 
