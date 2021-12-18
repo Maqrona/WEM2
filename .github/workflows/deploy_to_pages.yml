@@ -1,5 +1,5 @@
 # GitHub で Workflows として表示される名前
-name: Action Test
+name: Build Asciidoc
 
 # トリガーイベント
 on:
