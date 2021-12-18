@@ -14,7 +14,7 @@ on:
 
 # ジョブ (実行内容, 環境)
 jobs:
-  deploy-to-:
+  build-and-deploy:
 
     # ジョブを実行するマシン
     runs-on: ubuntu-latest
