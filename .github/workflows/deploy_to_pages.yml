@@ -14,7 +14,7 @@ on:
 
 # ジョブ (実行内容, 環境)
 jobs:
-  print-hello-world:
+  deploy-to-:
 
     # ジョブを実行するマシン
     runs-on: ubuntu-latest
@@ -22,12 +22,13 @@ jobs:
     # 実行するコマンド
     steps:
 
+      # これを実行するとファイルが現れる
       - name: Checkout Code
         uses: actions/checkout@v2
 
-      - name: test
-        run: |
-          ls -al
+      #- name: test
+      #  run: |
+      #    ls -al
 
       # Actions で asciidoctor を使えるようにしてくれる
       - name: build with asciidoctor
