@@ -48,8 +48,9 @@ jobs:
       # Webhook で Discord に通知
       - name: Discord Message Notification
         env:
+          # リポジトリの Secrets に WebHook の URL を登録した
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        uses: llshidur/action-discord@0.3.2
+        uses: Ilshidur/action-discord@0.3.2
         with:
           args: 'WEM2 ドキュメントが更新されました！ {{ EVENT_PAYLOAD.repository.full_name }}'
 
