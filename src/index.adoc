@@ -1,0 +1,28 @@
+//
+// 2021.12.24, Shogo Kitada
+//
+
+:figure-caption: 図
+:table-caption: 表
+:example-caption: 例
+:toc: left
+
+= WEM2 開発ドキュメント
+// 著者について
+Shogo Kitada <shogo.kitada@gmail.com>
+v1.0, 2021-12-24
+
+[preface]
+== 0. 開発にあたって
+
+== 1. 要求定義
+
+include::1_require.adoc[]
+
+== 2, 開発の進め方
+
+include::2_how_to_develop.adoc[]
+
+== 3. 外部設計
+
+== 4, 内部設計
