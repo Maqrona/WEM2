@@ -49,7 +49,7 @@ jobs:
       - name: Discord Message Notification
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        uses: llshidur/action-discord@master
+        uses: llshidur/action-discord@0.3.2
         with:
           args: 'WEM2 ドキュメントが更新されました！ {{ EVENT_PAYLOAD.repository.full_name }}'
 
