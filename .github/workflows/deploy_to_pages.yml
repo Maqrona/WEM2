@@ -36,7 +36,7 @@ jobs:
         # 使用する Docker コンテナ
         uses: docker://asciidoctor/docker-asciidoctor
         with:
-          args: asciidoctor ./src/index.adoc -o ./public/main.html
+          args: asciidoctor ./src/main.adoc -o ./public/main.html
 
       # Pages にデプロイしてくれる
       - name: deploy to pages
