@@ -1,5 +1,5 @@
 //
-// 2021.12.24, Shogo Kitada
+// 2021.12.24, Maqrona
 //
 
 :figure-caption: 図
@@ -11,7 +11,7 @@
 
 = WEM2 開発ドキュメント
 // 著者について
-Shogo Kitada <shogo.kitada@gmail.com>
+Maqrona <maqrona.elec0329x2@gmail.com>
 v1.0, 2021-12-24
 
 [preface]
