@@ -14,9 +14,6 @@
 Maqrona <maqrona.elec0329x2@gmail.com>
 v1.0, 2021-12-24
 
-[preface]
-== 0. 開発にあたって
-
 == 1. 要求定義
 
 include::1_require.adoc[]

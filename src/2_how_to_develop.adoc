@@ -11,6 +11,6 @@
 成果物の管理::
     * Git (Ubuntu リモートサーバを使用)
 
-=== 2.2. Visual Studio Code について
+// IMPORTANT: Ubuntu サーバについては Discord を参照してください.
 
-=== 2.3. Ubuntu リモートサーバについて
+=== 2.2. Visual Studio Code について
