@@ -31,8 +31,11 @@ jobs:
       #    ls -al
 
       # 画像たちをコピー
-      - name: copy img
-        run: cp -r ./src/img/* ./public/img/
+      - name: init public
+        run: |
+          mkdir -p ./public
+          mkdir -p ./public/img
+          cp -r ./src/img/* ./public/img/
 
       # Actions で asciidoctor を使えるようにしてくれる
       - name: build with asciidoctor
