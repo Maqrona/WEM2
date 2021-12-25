@@ -114,5 +114,20 @@ image::img/system_dfd/level0.png[]
 .DFD レベル1
 image::img/system_dfd/level1.png[]
 
+.DFD レベル 2 のデータディクショナリー
+|===
+
+| データフロー名 | 情報の内容
+
+| 照合結果
+| = 貸出申請 + ユーザは存在するか
+
+| バッジ番号
+| = バッジ固有の番号
+
+|===
+
+TIP: 枠外のデータフローはレベル 1 を参照してください.
+
 .DFD レベル2 (貸出プロセス)
 image::img/system_dfd/level2.png[]
