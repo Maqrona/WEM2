@@ -23,12 +23,16 @@ jobs:
     steps:
 
       # これを実行するとファイルが現れる
-      - name: Checkout Code
+      - name: checkout code
         uses: actions/checkout@v2
 
       #- name: test
       #  run: |
       #    ls -al
+
+      # 画像たちをコピー
+      - name: copy img
+        run: cp -r ./src/img/* ./public/img/
 
       # Actions で asciidoctor を使えるようにしてくれる
       - name: build with asciidoctor
@@ -36,7 +40,7 @@ jobs:
         # 使用する Docker コンテナ
         uses: docker://asciidoctor/docker-asciidoctor
         with:
-          args: asciidoctor ./src/main.adoc -o ./public/main.html
+          args: asciidoctor ./src/index.adoc -o ./public/index.html
 
       # Pages にデプロイしてくれる
       - name: deploy to pages
