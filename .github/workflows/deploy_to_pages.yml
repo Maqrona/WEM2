@@ -1,0 +1,57 @@
+# GitHub で Workflows として表示される名前
+name: Build Asciidoc
+
+# トリガーイベント
+on:
+  # git push をトリガーにする
+  push:
+    # main ブランチへの push が対象
+    branches:
+      - main
+
+  # GitHub の Web ページ上で手動実行をトリガーにする
+  workflow_dispatch:
+
+# ジョブ (実行内容, 環境)
+jobs:
+  build-and-deploy:
+
+    # ジョブを実行するマシン
+    runs-on: ubuntu-latest
+
+    # 実行するコマンド
+    steps:
+
+      # これを実行するとファイルが現れる
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      #- name: test
+      #  run: |
+      #    ls -al
+
+      # Actions で asciidoctor を使えるようにしてくれる
+      - name: build with asciidoctor
+
+        # 使用する Docker コンテナ
+        uses: docker://asciidoctor/docker-asciidoctor
+        with:
+          args: asciidoctor ./src/main.adoc -o ./public/main.html
+
+      # Pages にデプロイしてくれる
+      - name: deploy to pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+
+      # Webhook で Discord に通知
+      - name: Discord Message Notification
+        env:
+          # リポジトリの Secrets に WebHook の URL を登録した
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        uses: Ilshidur/action-discord@0.3.2
+        with:
+          args: 'WEM2 ドキュメントが更新されました！ 【${{ github.event.head_commit.message }}】https://maqrona.github.io/WEM2/'
+
+

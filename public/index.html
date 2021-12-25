@@ -436,6 +436,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
@@ -549,11 +550,106 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="sect2">
 <h3 id="_1_3_データフロー">1.3. データフロー</h3>
+<div class="sect3">
+<h4 id="_1_3_1_凡例">1.3.1. 凡例</h4>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+データディクショナリーの記述はバッカス記法に準拠しています.
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">表 1. データディクショナリーの凡例</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">記号</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">記述例</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">意味</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">=</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">返却結果 = 利用履歴 + バッジ番号</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">左辺のデータは右辺のデータと同じ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">貸出申請 = ユーザ ID + 実習室 + 目的</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ項目の結びつき (AND)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[&#8230;&#8203;]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">申請結果 = [バッジ番号 | 貸出NG]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">| で区切って, いずれかの要素を表す (OR)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{&#8230;&#8203;}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1{}3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">繰り返しを表す. 外の右側の数字が繰り返しの数を表す. (省略可能)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(&#8230;&#8203;)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">()</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">あってもなくてもよい, 任意の要素を表す.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_1_3_2_データフローの構造化表示">1.3.2. データフローの構造化表示</h4>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">表 2. レベル 0 のデータディクショナリー</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データフロー名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">情報の内容</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">利用申請</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">= ユーザ ID + 実習室 + 目的 + [入室 | 退室]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">入室状況</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">= ユーザ ID + 学年 + クラス + 氏名 + 実習室 + 目的 + [入室時間 | 退室時間] + 退出済みか</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">申請結果</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">= [バッジ番号 | 貸出NG]</p></td>
+</tr>
+</tbody>
+</table>
 <div class="imageblock">
 <div class="content">
 <img src="img/system_dfd/level0.png" alt="level0">
 </div>
-<div class="title">図 1. コンテキストダイアグラム (レベル 0)</div>
+<div class="title">図 1. DFD レベル 0 (コンテキストダイアグラム)</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/system_dfd/level1.png" alt="level1">
+</div>
+<div class="title">図 2. DFD レベル1</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/system_dfd/level2.png" alt="level2">
+</div>
+<div class="title">図 3. DFD レベル2 (貸出プロセス)</div>
+</div>
 </div>
 </div>
 </div>
@@ -617,7 +713,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2021-12-24 20:15:32 +0900
+Last updated 2021-12-24 20:36:10 +0900
 </div>
 </div>
 </body>
