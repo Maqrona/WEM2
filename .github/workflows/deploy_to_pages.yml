@@ -30,7 +30,7 @@ jobs:
       #  run: |
       #    ls -al
 
-      # 画像たちをコピー
+      # ディレクトリを作成して, 画像たちをコピー
       - name: init public
         run: |
           mkdir -p ./public
