@@ -451,7 +451,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_0_開発にあたって">0. 開発にあたって</a></li>
 <li><a href="#_1_要求定義">1. 要求定義</a>
 <ul class="sectlevel2">
 <li><a href="#_1_1_システムの要求">1.1. システムの要求</a></li>
@@ -463,7 +462,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_2_1_開発環境">2.1. 開発環境</a></li>
 <li><a href="#_2_2_visual_studio_code_について">2.2. Visual Studio Code について</a></li>
-<li><a href="#_2_3_ubuntu_リモートサーバについて">2.3. Ubuntu リモートサーバについて</a></li>
 </ul>
 </li>
 <li><a href="#_3_外部設計">3. 外部設計</a></li>
@@ -472,12 +470,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="_0_開発にあたって">0. 開発にあたって</h2>
-<div class="sectionbody">
-
-</div>
-</div>
 <div class="sect1">
 <h2 id="_1_要求定義">1. 要求定義</h2>
 <div class="sectionbody">
@@ -551,10 +543,48 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="sect2">
 <h3 id="_1_3_データフロー">1.3. データフロー</h3>
+<div class="paragraph">
+<p>構築するシステムの近辺で発生するデータの流れについて可視化したものです. フローチャートのように「～する」といった「動作」が入ってはいけないことに注意！</p>
+</div>
 <div class="sect3">
 <h4 id="_1_3_1_凡例">1.3.1. 凡例</h4>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">表 1. データディクショナリーの凡例</caption>
+<caption class="title">表 1. DFD の凡例</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">記号</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">名前</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">意味</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="img/dfd_legend/data_flow.png" alt="data flow"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データフロー</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データの流れを表す</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="img/dfd_legend/process.png" alt="process"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">プロセス</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データの処理 (変換) を表す</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="img/dfd_legend/data_store.png" alt="data store"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データストア</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データの蓄積を表す</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="img/dfd_legend/ext_entity.png" alt="ext entity"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データの源泉, 吸収</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">システム外部のデータ発生源もしくは行き先を表す</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">表 2. データディクショナリーの凡例</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -607,9 +637,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="_1_3_2_データフローの構造化表示">1.3.2. データフローの構造化表示</h4>
+<h4 id="_1_3_2_レベル_0">1.3.2. レベル 0</h4>
+<div class="paragraph">
+<p>コンテキストダイアグラムとも呼ばれるもので, 今回作成するシステムを 1 つのプロセスとしてデータフローを考えます.</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">表 2. レベル 0 のデータディクショナリー</caption>
+<caption class="title">表 3. レベル 0 のデータディクショナリー</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -637,13 +670,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <img src="img/system_dfd/level0.png" alt="level0">
 </div>
-<div class="title">図 1. DFD レベル 0 (コンテキストダイアグラム)</div>
+<div class="title">図 1. DFD レベル 0</div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="dfd-level1-1-3-3">1.3.3. レベル 1</h4>
 <div class="paragraph">
-<p>[[1-3-2-dfd-level1]]
-.DFD レベル 1 のデータディクショナリー</p>
+<p>システムを「貸出」「返却」「照会」に分割して, それぞれについてのデータフローを考えています.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
+<caption class="title">表 4. DFD レベル 1 のデータディクショナリー</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -689,8 +725,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="title">図 2. DFD レベル1</div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_1_3_4_レベル_2">1.3.4. レベル 2</h4>
+<div class="paragraph">
+<p>「貸出」プロセスについて, 更に細分化したものです. 他のプロセスについてはこれ以上のデータ変換が発生しません.</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">表 3. DFD レベル 2 のデータディクショナリー</caption>
+<caption class="title">表 5. DFD レベル 2 のデータディクショナリー</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -717,7 +759,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-枠外のデータフローは <a href="#1-3-2-dfd-level1">DFD レベル 1</a> を参照してください.
+枠外のデータフローは <a href="#dfd-level1-1-3-3">DFD レベル 1</a> を参照してください.
 </td>
 </tr>
 </table>
@@ -769,10 +811,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h3 id="_2_2_visual_studio_code_について">2.2. Visual Studio Code について</h3>
 
 </div>
-<div class="sect2">
-<h3 id="_2_3_ubuntu_リモートサーバについて">2.3. Ubuntu リモートサーバについて</h3>
-
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -791,7 +829,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2021-12-25 14:41:20 UTC
+Last updated 2021-12-25 15:24:12 UTC
 </div>
 </div>
 </body>
