@@ -170,3 +170,11 @@ TIP: 枠外のデータフローは <<dfd-level1-1-3-3, DFD レベル 1>> を参
 
 .DFD レベル2 (貸出プロセス)
 image::img/system_dfd/level2.png[]
+
+=== 1.4. アクティビティ図
+
+.入退室アクティビティ
+image::img/activity/entry_exit.png[]
+
+.照会アクティビティ
+image::img/activity/search.png[]
