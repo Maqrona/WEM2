@@ -24,4 +24,6 @@ include::2_how_to_develop.adoc[]
 
 == 3. 外部設計
 
+include::3_external_design.adoc[]
+
 == 4, 内部設計
