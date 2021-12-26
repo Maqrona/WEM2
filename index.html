@@ -464,7 +464,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_2_2_visual_studio_code_について">2.2. Visual Studio Code について</a></li>
 </ul>
 </li>
-<li><a href="#_3_外部設計">3. 外部設計</a></li>
+<li><a href="#_3_外部設計">3. 外部設計</a>
+<ul class="sectlevel2">
+<li><a href="#_3_1_サブシステム分割">3.1. サブシステム分割</a></li>
+<li><a href="#_3_2_インタフェース">3.2. インタフェース</a></li>
+<li><a href="#_3_3_画面設計">3.3. 画面設計</a></li>
+</ul>
+</li>
 <li><a href="#_4_内部設計">4, 内部設計</a></li>
 </ul>
 </div>
@@ -703,7 +709,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">返却結果</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">= 貸出申請 + 名前 + 返却時間 + 返却成功か</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">= 貸出申請 + 名前 + 返却時間 + (利用時間) + 返却成功か</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">利用履歴</p></td>
@@ -716,6 +722,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">入室状況</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">= 貸出結果 + (返却結果)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">生徒情報</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">= ユーザ ID + 学年 + クラス + 氏名</p></td>
 </tr>
 </tbody>
 </table>
@@ -816,7 +826,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect1">
 <h2 id="_3_外部設計">3. 外部設計</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_3_1_サブシステム分割">3.1. サブシステム分割</h3>
 
+</div>
+<div class="sect2">
+<h3 id="_3_2_インタフェース">3.2. インタフェース</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_3_3_画面設計">3.3. 画面設計</h3>
+
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -829,7 +850,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2021-12-25 15:24:12 UTC
+Last updated 2021-12-26 05:55:02 UTC
 </div>
 </div>
 </body>
